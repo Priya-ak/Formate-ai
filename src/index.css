@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; --fm-scale: 1; }
+html { font-size: calc(16px * var(--fm-scale)); }
+body { margin: 0; background: #F8FAFC; color: #172033; font-family: Inter, 'Segoe UI', 'Noto Sans Tamil', 'Noto Sans Devanagari', 'Noto Sans Telugu', 'Noto Sans Kannada', 'Noto Sans Malayalam', 'Noto Sans Bengali', system-ui, sans-serif; }
+.fm-large { --fm-scale: 1.15; }
+.fm-xlarge { --fm-scale: 1.3; }
+.fm-contrast body, .fm-contrast { --tw-ring-color: #000; }
+.fm-contrast .fm-card { border: 2px solid #000; box-shadow: none; }
+.fm-contrast .fm-btn { border-width: 2px; border-color: #000; }
+.fm-contrast .fm-muted { color: #172033 !important; }
+.fm-reduce *, .fm-reduce *::before, .fm-reduce *::after { animation: none !important; transition: none !important; }
+:focus-visible { outline: 3px solid #172033; outline-offset: 2px; }
+
+@keyframes fm-wave { 0%, 100% { transform: scaleY(.3); } 50% { transform: scaleY(1); } }
+@keyframes fm-pulse { 0% { box-shadow: 0 0 0 0 rgba(91,92,226,.5); } 100% { box-shadow: 0 0 0 22px rgba(91,92,226,0); } }
+.fm-bar { transform-origin: center; animation: fm-wave 1s ease-in-out infinite; }
+.fm-pulse { animation: fm-pulse 1.4s ease-out infinite; }

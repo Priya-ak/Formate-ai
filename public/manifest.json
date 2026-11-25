@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "FormMate — Voice Form Filler",
+  "short_name": "FormMate",
+  "version": "1.0.0",
+  "description": "Every form. Every website. Just speak. FormMate fills online forms for you from your voice, in Indian languages, right on the page you are using.",
+  "minimum_chrome_version": "114",
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": {
+    "default_title": "FormMate",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png" }
+  },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "background": { "service_worker": "background.js" },
+  "permissions": ["activeTab", "storage", "sidePanel", "scripting"],
+  "host_permissions": ["https://generativelanguage.googleapis.com/*"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/*", "http://127.0.0.1/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

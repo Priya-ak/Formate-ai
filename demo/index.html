@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Careers — Job Application | Acme Labs (FormMate demo)</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="top"><strong>Acme Labs</strong> <span>Careers</span></header>
+<main>
+  <p class="demo-note">This is a local demo page for testing FormMate. Nothing is sent anywhere.</p>
+  <h1>Software Developer — Job Application</h1>
+  <ol class="steps" aria-label="Application steps">
+    <li id="ind-1" class="on">1. Personal</li><li id="ind-2">2. Education & experience</li><li id="ind-3">3. About you</li>
+  </ol>
+
+  <form id="apply" novalidate>
+    <section id="step-1" class="step">
+      <h2>Personal details</h2>
+      <div class="f"><label for="fullName">Full name *</label><input id="fullName" name="fullName" type="text" required autocomplete="name" /><p class="err" id="e-fullName" role="alert"></p></div>
+      <div class="f"><label for="email">Email address *</label><input id="email" name="email" type="email" required autocomplete="email" /><p class="err" id="e-email" role="alert"></p></div>
+      <div class="f"><label for="phone">Mobile number *</label><input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="10-digit number" /><p class="err" id="e-phone" role="alert"></p></div>
+      <div class="f"><label for="dob">Date of birth *</label><input id="dob" name="dob" type="date" required autocomplete="bday" /><p class="err" id="e-dob" role="alert"></p></div>
+      <fieldset class="f"><legend>Gender</legend>
+        <label class="inline"><input type="radio" name="gender" value="female" /> Female</label>
+        <label class="inline"><input type="radio" name="gender" value="male" /> Male</label>
+        <label class="inline"><input type="radio" name="gender" value="other" /> Prefer not to say</label>
+      </fieldset>
+      <div class="f"><label for="city">City *</label><input id="city" name="city" type="text" required autocomplete="address-level2" /><p class="err" id="e-city" role="alert"></p></div>
+      <div class="actions"><button type="button" id="next-1" class="primary">Next</button></div>
+    </section>
+
+    <section id="step-2" class="step" hidden>
+      <h2>Education & experience</h2>
+      <div class="f"><label for="education">Highest education *</label>
+        <select id="education" name="education" required>
+          <option value="">Select…</option><option value="highschool">High school</option><option value="diploma">Diploma</option>
+          <option value="bachelors">Bachelor's degree</option><option value="masters">Master's degree</option><option value="other">Other</option>
+        </select><p class="err" id="e-education" role="alert"></p></div>
+      <div class="f" id="edu-other-wrap" hidden><label for="eduOther">Please specify your education *</label><input id="eduOther" name="eduOther" type="text" /><p class="err" id="e-eduOther" role="alert"></p></div>
+      <div class="f"><label for="institution">College / University</label><input id="institution" name="institution" type="text" /></div>
+      <div class="f"><label for="years">Years of experience *</label><input id="years" name="years" type="number" min="0" max="50" required /><p class="err" id="e-years" role="alert"></p></div>
+      <fieldset class="f"><legend>Skills (select all that apply)</legend>
+        <label class="inline"><input type="checkbox" name="skills" value="javascript" /> JavaScript</label>
+        <label class="inline"><input type="checkbox" name="skills" value="python" /> Python</label>
+        <label class="inline"><input type="checkbox" name="skills" value="sql" /> SQL</label>
+        <label class="inline"><input type="checkbox" name="skills" value="cloud" /> Cloud</label>
+      </fieldset>
+      <fieldset class="f"><legend>Work mode *</legend>
+        <label class="inline"><input type="radio" name="mode" value="onsite" /> On-site</label>
+        <label class="inline"><input type="radio" name="mode" value="remote" /> Remote</label>
+        <label class="inline"><input type="radio" name="mode" value="hybrid" /> Hybrid</label>
+        <p class="err" id="e-mode" role="alert"></p>
+      </fieldset>
+      <div class="actions"><button type="button" id="back-2">Previous</button><button type="button" id="next-2" class="primary">Next</button></div>
+    </section>
+
+    <section id="step-3" class="step" hidden>
+      <h2>About you</h2>
+      <div class="f"><label for="why">Why do you want to join us? *</label><textarea id="why" name="why" rows="4" required></textarea><p class="err" id="e-why" role="alert"></p></div>
+      <div class="f"><label for="linkedin">LinkedIn profile (optional)</label><input id="linkedin" name="linkedin" type="url" placeholder="https://" /></div>
+      <div class="f"><label for="resume">Resume (PDF)</label><input id="resume" name="resume" type="file" accept=".pdf" /></div>
+      <div class="f"><label for="pw">Create a password for your applicant account *</label><input id="pw" name="pw" type="password" autocomplete="new-password" /></div>
+      <div class="f"><label class="inline"><input type="checkbox" id="consent" name="consent" required /> I confirm the information is true and I agree to the terms *</label><p class="err" id="e-consent" role="alert"></p></div>
+      <div class="actions"><button type="button" id="back-3">Previous</button><button type="submit" class="primary" id="submit">Submit application</button></div>
+    </section>
+  </form>
+  <p id="done" class="done" role="status" hidden></p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
