@@ -3,7 +3,7 @@
   "name": "FormMate — Voice Form Filler",
   "short_name": "FormMate",
   "version": "1.0.0",
-  "description": "Every form. Every website. Just speak. FormMate fills online forms for you from your voice, in Indian languages, right on the page you are using.",
+  "description": "Fill online forms by voice in Tamil, Hindi, English and more. FormMate verifies each field and never submits for you.",
   "minimum_chrome_version": "114",
   "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
   "action": {
